@@ -43,7 +43,7 @@ class _BusManageState extends State<BusManage> {
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(20),
                     color: Colors.black),
-                margin: EdgeInsets.symmetric(horizontal: 30),
+                margin: const EdgeInsets.symmetric(horizontal: 30),
                 height: 120,
                 child: Row(
                   children: [
@@ -52,7 +52,7 @@ class _BusManageState extends State<BusManage> {
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.start,
                         crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
+                        children: const [
                           Text(
                             'Rohit Sharma',
                             style: TextStyle(
@@ -78,13 +78,53 @@ class _BusManageState extends State<BusManage> {
                 // width: 335,
               ),
               Container(
-                margin: const EdgeInsets.all(30),
+                margin: const EdgeInsets.all(20),
                 height: 500,
                 width: 350,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
                   border: Border.all(width: 0.1),
                   color: Colors.white,
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.all(70.0),
+                  child: Row(
+                    children: [
+                      Expanded(
+                        flex: 1,
+                        child: GridView.builder(
+                            shrinkWrap: true,
+                            gridDelegate:
+                                const SliverGridDelegateWithFixedCrossAxisCount(
+                                    crossAxisCount: 2),
+                            itemCount: 18,
+                            itemBuilder: (context, int index) {
+                              return Container(
+                                  width: 30,
+                                  height: 22,
+                                  child: Image.asset('images/Seat.png'));
+                            }),
+                      ),
+                      const SizedBox(
+                        width: 50,
+                      ),
+                      Expanded(
+                        flex: 1,
+                        child: GridView.builder(
+                            shrinkWrap: true,
+                            gridDelegate:
+                                const SliverGridDelegateWithFixedCrossAxisCount(
+                                    crossAxisCount: 2),
+                            itemCount: 18,
+                            itemBuilder: (context, int index) {
+                              return Container(
+                                  width: 30,
+                                  height: 22,
+                                  child: Image.asset('images/Seat.png'));
+                            }),
+                      ),
+                    ],
+                  ),
                 ),
               )
             ],

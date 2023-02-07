@@ -86,6 +86,52 @@ class _BusSeat2State extends State<BusSeat2> {
                   border: Border.all(width: 0.1),
                   color: Colors.white,
                 ),
+                child: Container(
+                  margin: EdgeInsets.all(30),
+                  padding: EdgeInsets.all(20),
+                  child: Padding(
+                    padding: const EdgeInsets.all(10.0),
+                    child: Row(
+                      children: [
+                        Expanded(
+                          flex: 1,
+                          child: GridView.builder(
+
+                              // physics: const NeverScrollableScrollPhysics(),
+                              shrinkWrap: true,
+                              gridDelegate:
+                                  const SliverGridDelegateWithFixedCrossAxisCount(
+                                      crossAxisCount: 1),
+                              itemCount: 9,
+                              itemBuilder: (context, int index) {
+                                return Container(
+                                    width: 30,
+                                    height: MediaQuery.of(context).size.height,
+                                    child: Image.asset('images/Seat.png'));
+                              }),
+                        ),
+                        const SizedBox(
+                          width: 50,
+                        ),
+                        Expanded(
+                          flex: 2,
+                          child: GridView.builder(
+                              // shrinkWrap: true,
+                              gridDelegate:
+                                  const SliverGridDelegateWithFixedCrossAxisCount(
+                                      crossAxisCount: 3),
+                              itemCount: 27,
+                              itemBuilder: (context, int index) {
+                                return Container(
+                                    width: 30,
+                                    height: 22,
+                                    child: Image.asset('images/Seat.png'));
+                              }),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
               ),
             ],
           ),
