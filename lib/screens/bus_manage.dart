@@ -110,18 +110,32 @@ class _BusManageState extends State<BusManage> {
                       ),
                       Expanded(
                         flex: 1,
-                        child: GridView.builder(
-                            shrinkWrap: true,
-                            gridDelegate:
-                                const SliverGridDelegateWithFixedCrossAxisCount(
-                                    crossAxisCount: 2),
-                            itemCount: 18,
-                            itemBuilder: (context, int index) {
-                              return Container(
-                                  width: 30,
-                                  height: 22,
-                                  child: Image.asset('images/Seat.png'));
-                            }),
+                        child: Column(
+                          children: [
+                            Padding(
+                              padding: EdgeInsets.only(left: 40, bottom: 10),
+                              child: Image.asset('images/SeatBlack.png'),
+                            ),
+                            Expanded(
+                              child: GridView.builder(
+                                  shrinkWrap: true,
+                                  gridDelegate:
+                                      const SliverGridDelegateWithFixedCrossAxisCount(
+                                          crossAxisCount: 2),
+                                  itemCount: 18,
+                                  itemBuilder: (context, int index) {
+                                    return Padding(
+                                      padding: const EdgeInsets.only(top: 10),
+                                      child: Container(
+                                          width: 30,
+                                          height: 22,
+                                          child:
+                                              Image.asset('images/Seat.png')),
+                                    );
+                                  }),
+                            ),
+                          ],
+                        ),
                       ),
                     ],
                   ),
